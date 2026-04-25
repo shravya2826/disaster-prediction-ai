@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    float rainfall, temperature, humidity, river_level, wind_speed;
+    int risk;
+
+    printf("=== Disaster Risk Prediction System ===\n");
+
+    // Input values
+    printf("Enter Rainfall (mm): ");
+    scanf("%f", &rainfall);
+
+    printf("Enter Temperature (°C): ");
+    scanf("%f", &temperature);
+
+    printf("Enter Humidity (%%): ");
+    scanf("%f", &humidity);
+
+    printf("Enter River Level (m): ");
+    scanf("%f", &river_level);
+
+    printf("Enter Wind Speed (km/h): ");
+    scanf("%f", &wind_speed);
+
+    // Simple rule-based prediction
+    if (rainfall > 120 && river_level > 7.0) {
+        risk = 2;  // High Risk
+    }
+    else if (rainfall > 60 && humidity > 70) {
+        risk = 1;  // Medium Risk
+    }
+    else {
+        risk = 0;  // Low Risk
+    }
+
+    // Output result
+    printf("\n--- Prediction Result ---\n");
+
+    if (risk == 0) {
+        printf("Risk Level: LOW\n");
+    }
+    else if (risk == 1) {
+        printf("Risk Level: MEDIUM\n");
+    }
+    else {
+        printf("Risk Level: HIGH\n");
+    }
+
+    printf("\nThank you!\n");
+
+    return 0;
+}
